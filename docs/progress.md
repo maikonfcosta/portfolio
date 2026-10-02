@@ -37,3 +37,4 @@ Tipografia revisada: IBM Plex Sans para títulos e corpo; IBM Plex Mono restrita
 Revisão tipográfica após verificar Pages: IBM Plex Sans carregava corretamente, porém mantinha o aspecto geométrico próximo da versão anterior. Alterada para Source Sans 3 no corpo e Source Serif 4 nos títulos, com o sobrenome editorial e sem itálico. Acrescido identificador à URL do CSS para renovar cache do Pages; confirmação local: famílias carregadas no Chromium.
 
 Foto enviada pelo usuário integrada como WebP otimizado na abertura. Composição em três colunas no desktop, duas no tablet e fluxo vertical no celular. Descrição acessível localizada PT/EN. Capturas prévias em 390px, 768px e 1440px conferidas visualmente.
+Retrato refinado para formato circular com aro jade discreto, sombra leve e enquadramento 1:1. Preview visual revisto em 390px e 1440px; versão desktop centralizada entre identidade e apresentação. Cache CSS renovado para o Pages.
