@@ -17,7 +17,7 @@ Execute `python tests/smoke.py` e `python tests/preferences.py` para validar. O 
 
 Conteúdo baseado no README do perfil e nas descrições locais dos projetos. Resultados profissionais são autorrelatados e contextualizados; não representam auditoria externa. Capturas reais do relatório público e da jornada E2E usam dados de demonstração. Origem registrada em assets/evidence/README.md; as imagens são registros estáticos.
 
-As fontes IBM Plex Sans e IBM Plex Mono são carregadas pelo Google Fonts, com fontes de fallback. O conteúdo, navegação e todos os projetos continuam disponíveis sem JavaScript. O filtro e menu recolhível são aprimoramentos progressivos.
+As fontes Source Serif 4, Source Sans 3 e IBM Plex Mono são carregadas pelo Google Fonts, com fontes de fallback. O conteúdo, navegação e todos os projetos continuam disponíveis sem JavaScript. O filtro e menu recolhível são aprimoramentos progressivos.
 
 PT é o idioma inicial. O tema segue o sistema até a escolha manual. Botões PT/EN e tema salvam preferências quando o armazenamento está disponível. Idioma inclui textos, metadados, rótulos acessíveis e assunto do contato do projeto pessoal. Preferências em file:// variam por navegador; prefira HTTP para a avaliação de persistência. Sem armazenamento, os controles seguem funcionais na visita.
 
@@ -29,4 +29,4 @@ Abertura com nome em duas linhas e apresentação direta. Case principal conta a
 
 ## Repositório e validação local
 
-Repositório público: https://github.com/maikonfcosta/portfolio. O site não está publicado. Execute ./scripts/qa-ci-local.ps1 antes de commit ou push; requer Python, Playwright com Chromium e Node. A auditoria axe consulta o registro npm.
+Repositório público: https://github.com/maikonfcosta/portfolio. Site: https://maikonfcosta.github.io/portfolio/. Execute ./scripts/qa-ci-local.ps1 antes de commit ou push; requer Python, Playwright com Chromium e Node. A auditoria axe consulta o registro npm.

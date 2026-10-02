@@ -33,3 +33,5 @@
 - Prévia local atualizada. Foto continua pendente; sem commit, push ou publicação.
 Ajuste de disposição na abertura: cargo e experiência agrupados sob o nome; link Sobre junto da apresentação; removida linha de rodapé dispersa. Reduzidos recuos e espaço entre colunas. Smoke, preferências (20 combinações) e axe (oito combinações) passaram. Captura desktop revisada.
 Tipografia revisada: IBM Plex Sans para títulos e corpo; IBM Plex Mono restrita a código e rótulos técnicos. Removidos Newsreader, Outfit, DM Sans e nome redundante na barra superior. Ajustados pesos e tamanhos; qa-ci-local passou, incluindo 20 combinações responsivas e oito auditorias axe. Captura desktop revisada.
+
+Revisão tipográfica após verificar Pages: IBM Plex Sans carregava corretamente, porém mantinha o aspecto geométrico próximo da versão anterior. Alterada para Source Sans 3 no corpo e Source Serif 4 nos títulos, com o sobrenome editorial e sem itálico. Acrescido identificador à URL do CSS para renovar cache do Pages; confirmação local: famílias carregadas no Chromium.
