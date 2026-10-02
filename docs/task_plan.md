@@ -19,7 +19,7 @@ Apresentação, resultados contextualizados, projetos com filtros, sobre, compet
 - [x] Identidade, cases verificáveis e contatos por objetivo.
 - [x] Traduções, preferências, teclado e responsividade preservados.
 - [x] Revisão visual e validação final; plano em redesign-plan.md.
-- [ ] Incorporar foto quando o usuário fornecer (pendência externa ao escopo concluído).
+- [x] Incorporar retrato fornecido pelo usuário em formatos desktop e mobile.
 
 ## Direção pessoal
 - [x] Apresentação direta, composição variada e relato técnico real.

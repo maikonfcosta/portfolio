@@ -30,3 +30,5 @@ Abertura com nome em duas linhas e apresentação direta. Case principal conta a
 ## Repositório e validação local
 
 Repositório público: https://github.com/maikonfcosta/portfolio. Site: https://maikonfcosta.github.io/portfolio/. Execute ./scripts/qa-ci-local.ps1 antes de commit ou push; requer Python, Playwright com Chromium e Node. A auditoria axe consulta o registro npm.
+
+A foto de perfil é fornecida pelo autor, otimizada em WebP e armazenada em assets/maikon-costa.webp.

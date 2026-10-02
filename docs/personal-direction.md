@@ -8,4 +8,4 @@ Autorizada pelo usuário: tornar a página menos rígida, com apresentação em 
 - Serviços descritos pelos problemas que o cliente enfrenta. Interesses pessoais já informados, sem inventar falas ou biografia.
 - Aceite: todos os controles existentes funcionais; traduções completas, leitura no celular, teclado, redução de movimento e revisão visual dos dois temas.
 
-Foto pessoal: incorporar quando o usuário fornecer; não impede esta etapa. Sem publicação ou commit.
+Foto fornecida pelo usuário e integrada em destaque na abertura; posicionamento e enquadramento revisados no desktop, tablet e celular.

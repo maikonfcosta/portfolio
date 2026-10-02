@@ -35,3 +35,5 @@ Ajuste de disposição na abertura: cargo e experiência agrupados sob o nome; l
 Tipografia revisada: IBM Plex Sans para títulos e corpo; IBM Plex Mono restrita a código e rótulos técnicos. Removidos Newsreader, Outfit, DM Sans e nome redundante na barra superior. Ajustados pesos e tamanhos; qa-ci-local passou, incluindo 20 combinações responsivas e oito auditorias axe. Captura desktop revisada.
 
 Revisão tipográfica após verificar Pages: IBM Plex Sans carregava corretamente, porém mantinha o aspecto geométrico próximo da versão anterior. Alterada para Source Sans 3 no corpo e Source Serif 4 nos títulos, com o sobrenome editorial e sem itálico. Acrescido identificador à URL do CSS para renovar cache do Pages; confirmação local: famílias carregadas no Chromium.
+
+Foto enviada pelo usuário integrada como WebP otimizado na abertura. Composição em três colunas no desktop, duas no tablet e fluxo vertical no celular. Descrição acessível localizada PT/EN. Capturas prévias em 390px, 768px e 1440px conferidas visualmente.

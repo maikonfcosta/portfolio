@@ -205,6 +205,7 @@ window.portfolioTranslations = Object.freeze({
   "Se você procura alguém para o time ou precisa de ajuda com qualidade, me conte um pouco sobre o projeto.": "If you’re looking for someone to join your team or need help with quality, tell me a little about your project.",
   "PESSOAL": "PERSONAL",
   "Eu testo software e investigo por que ele falha.": "I test software and investigate why it fails.",
+  "Maikon Costa, QA Lead e Test Automation Engineer": "Maikon Costa, QA Lead and Test Automation Engineer",
   "Até setembro de 2026": "Until September 2026",
   "Bosch · BRQ · Unimed": "Bosch · BRQ · Unimed",
   "Projetos e estudo": "Projects and learning",
