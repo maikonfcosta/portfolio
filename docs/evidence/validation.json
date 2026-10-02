@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": [
+    "project filters",
+    "anchor targets",
+    "contact",
+    "responsive 360–1440",
+    "mobile menu and Escape",
+    "keyboard skip link",
+    "reduced motion",
+    "no JavaScript fallback",
+    "no page errors"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checks": [
+    "PT/EN full content",
+    "filter state across language",
+    "four language/theme combinations",
+    "20 responsive combinations",
+    "persisted settings over HTTP",
+    "system theme",
+    "manual theme priority",
+    "keyboard and Escape in English",
+    "live reduced-motion change",
+    "unavailable storage fallback",
+    "no page errors"
+  ]
+}

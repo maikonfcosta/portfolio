@@ -1,0 +1,250 @@
+{
+  "status": "passed",
+  "versions": 12,
+  "viewports": [
+    390,
+    1440
+  ],
+  "contrast": [
+    {
+      "palette": "jade-dark",
+      "pair": "text/bg",
+      "contrast": 16.41
+    },
+    {
+      "palette": "jade-dark",
+      "pair": "muted/surface",
+      "contrast": 7.9
+    },
+    {
+      "palette": "jade-dark",
+      "pair": "accent/bg",
+      "contrast": 10.66
+    },
+    {
+      "palette": "jade-dark",
+      "pair": "ink/accent",
+      "contrast": 9.09
+    },
+    {
+      "palette": "jade-light",
+      "pair": "text/bg",
+      "contrast": 13.95
+    },
+    {
+      "palette": "jade-light",
+      "pair": "muted/surface",
+      "contrast": 5.31
+    },
+    {
+      "palette": "jade-light",
+      "pair": "accent/bg",
+      "contrast": 6.59
+    },
+    {
+      "palette": "jade-light",
+      "pair": "ink/accent",
+      "contrast": 7.04
+    },
+    {
+      "palette": "petroleo-dark",
+      "pair": "text/bg",
+      "contrast": 16.15
+    },
+    {
+      "palette": "petroleo-dark",
+      "pair": "muted/surface",
+      "contrast": 7.77
+    },
+    {
+      "palette": "petroleo-dark",
+      "pair": "accent/bg",
+      "contrast": 10.34
+    },
+    {
+      "palette": "petroleo-dark",
+      "pair": "ink/accent",
+      "contrast": 8.5
+    },
+    {
+      "palette": "petroleo-light",
+      "pair": "text/bg",
+      "contrast": 13.43
+    },
+    {
+      "palette": "petroleo-light",
+      "pair": "muted/surface",
+      "contrast": 5.2
+    },
+    {
+      "palette": "petroleo-light",
+      "pair": "accent/bg",
+      "contrast": 6.29
+    },
+    {
+      "palette": "petroleo-light",
+      "pair": "ink/accent",
+      "contrast": 6.78
+    },
+    {
+      "palette": "ambar-dark",
+      "pair": "text/bg",
+      "contrast": 15.9
+    },
+    {
+      "palette": "ambar-dark",
+      "pair": "muted/surface",
+      "contrast": 7.64
+    },
+    {
+      "palette": "ambar-dark",
+      "pair": "accent/bg",
+      "contrast": 10.17
+    },
+    {
+      "palette": "ambar-dark",
+      "pair": "ink/accent",
+      "contrast": 8.78
+    },
+    {
+      "palette": "ambar-light",
+      "pair": "text/bg",
+      "contrast": 13.59
+    },
+    {
+      "palette": "ambar-light",
+      "pair": "muted/surface",
+      "contrast": 4.97
+    },
+    {
+      "palette": "ambar-light",
+      "pair": "accent/bg",
+      "contrast": 5.74
+    },
+    {
+      "palette": "ambar-light",
+      "pair": "ink/accent",
+      "contrast": 6.19
+    },
+    {
+      "palette": "violeta-dark",
+      "pair": "text/bg",
+      "contrast": 15.94
+    },
+    {
+      "palette": "violeta-dark",
+      "pair": "muted/surface",
+      "contrast": 7.82
+    },
+    {
+      "palette": "violeta-dark",
+      "pair": "accent/bg",
+      "contrast": 8.14
+    },
+    {
+      "palette": "violeta-dark",
+      "pair": "ink/accent",
+      "contrast": 7.39
+    },
+    {
+      "palette": "violeta-light",
+      "pair": "text/bg",
+      "contrast": 13.73
+    },
+    {
+      "palette": "violeta-light",
+      "pair": "muted/surface",
+      "contrast": 5.31
+    },
+    {
+      "palette": "violeta-light",
+      "pair": "accent/bg",
+      "contrast": 6.48
+    },
+    {
+      "palette": "violeta-light",
+      "pair": "ink/accent",
+      "contrast": 7.01
+    },
+    {
+      "palette": "coral-dark",
+      "pair": "text/bg",
+      "contrast": 15.7
+    },
+    {
+      "palette": "coral-dark",
+      "pair": "muted/surface",
+      "contrast": 7.67
+    },
+    {
+      "palette": "coral-dark",
+      "pair": "accent/bg",
+      "contrast": 8.69
+    },
+    {
+      "palette": "coral-dark",
+      "pair": "ink/accent",
+      "contrast": 7.72
+    },
+    {
+      "palette": "coral-light",
+      "pair": "text/bg",
+      "contrast": 13.69
+    },
+    {
+      "palette": "coral-light",
+      "pair": "muted/surface",
+      "contrast": 4.96
+    },
+    {
+      "palette": "coral-light",
+      "pair": "accent/bg",
+      "contrast": 5.7
+    },
+    {
+      "palette": "coral-light",
+      "pair": "ink/accent",
+      "contrast": 6.11
+    },
+    {
+      "palette": "cobalto-dark",
+      "pair": "text/bg",
+      "contrast": 16.0
+    },
+    {
+      "palette": "cobalto-dark",
+      "pair": "muted/surface",
+      "contrast": 7.84
+    },
+    {
+      "palette": "cobalto-dark",
+      "pair": "accent/bg",
+      "contrast": 9.44
+    },
+    {
+      "palette": "cobalto-dark",
+      "pair": "ink/accent",
+      "contrast": 7.78
+    },
+    {
+      "palette": "cobalto-light",
+      "pair": "text/bg",
+      "contrast": 13.12
+    },
+    {
+      "palette": "cobalto-light",
+      "pair": "muted/surface",
+      "contrast": 5.0
+    },
+    {
+      "palette": "cobalto-light",
+      "pair": "accent/bg",
+      "contrast": 5.9
+    },
+    {
+      "palette": "cobalto-light",
+      "pair": "ink/accent",
+      "contrast": 6.27
+    }
+  ]
+}
