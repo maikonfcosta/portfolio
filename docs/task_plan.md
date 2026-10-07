@@ -25,3 +25,7 @@ Apresentação, resultados contextualizados, projetos com filtros, sobre, compet
 - [x] Apresentação direta, composição variada e relato técnico real.
 - [x] Tradução e verificação visual do novo conteúdo.
 - [x] Navegação, filtros, preferências e acessibilidade automatizada verificados.
+
+## Estado atual — 07/10/2026
+
+Site publicado no GitHub Pages; retrato integrado. Arquivo e listas anteriores registram o escopo histórico. Implementação atual usa assets/professional.css. Atualização de conteúdo e metadados em portfolio-update-plan.md.

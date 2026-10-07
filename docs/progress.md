@@ -38,3 +38,12 @@ Revisão tipográfica após verificar Pages: IBM Plex Sans carregava corretament
 
 Foto enviada pelo usuário integrada como WebP otimizado na abertura. Composição em três colunas no desktop, duas no tablet e fluxo vertical no celular. Descrição acessível localizada PT/EN. Capturas prévias em 390px, 768px e 1440px conferidas visualmente.
 Retrato refinado para formato circular com aro jade discreto, sombra leve e enquadramento 1:1. Preview visual revisto em 390px e 1440px; versão desktop centralizada entre identidade e apresentação. Cache CSS renovado para o Pages.
+
+## Atualização — 07/10/2026 15:38 GMT-3
+
+- Incluído QA Automation Java com arquitetura, quatro cenários sintéticos e execução histórica de 05/10/2026 (4 testes Java e 6 Python aprovados). Sem link ao repositório privado ou publicação de documentação interna.
+- Competências atualizadas; cinco projetos com filtros (4 QA, 1 pessoal), tradução PT/EN e assuntos de contato localizados.
+- Canonical, og:url, og:locale, imagem PNG 1200 × 630 e Twitter Card adicionados. Imagem capturada da abertura atual, conferida visualmente.
+- README corrigido quanto à publicação e retrato. Planos anteriores preservados como histórico e acrescidos do estado atual.
+- qa-ci-local passou: sintaxe JS, smoke, preferências em 20 combinações responsivas, oito auditorias axe sem violações automatizadas e git diff --check. Revisão das capturas de compartilhamento e do case mobile concluída.
+- Publicação destinada ao repositório portfolio, branch main e raiz, conforme configuração Pages verificada. Pasta qa-automation-java/ e docs/qa-automation-java-design.md preexistentes ficam fora do commit.

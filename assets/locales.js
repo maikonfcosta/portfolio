@@ -212,5 +212,9 @@ window.portfolioTranslations = Object.freeze({
   "O que estou estudando": "What I’m studying",
   "Revisamos os riscos do produto e escolhemos as jornadas que precisam ser testadas primeiro.": "We review the product’s risks and choose which journeys need to be tested first.",
   "Investigo as falhas recorrentes, reviso os testes E2E e de API e ajusto sua execução na pipeline.": "I investigate recurring failures, review E2E and API tests and adjust how they run in the pipeline.",
-  "Definimos uma carga representativa, medimos o comportamento do sistema e investigamos os gargalos.": "We define a representative workload, measure the system’s behavior and investigate bottlenecks."
+  "Definimos uma carga representativa, medimos o comportamento do sistema e investigamos os gargalos.": "We define a representative workload, measure the system’s behavior and investigate bottlenecks.",
+  "UI & API / Java": "UI & API / Java",
+  "Uma suíte demonstrativa com Selenium e RestAssured sobre uma aplicação local com dados sintéticos. Page Objects isolam a interação com a interface; builders e um cliente de API organizam os dados e as requisições. O pipeline preserva relatórios Surefire e envia métricas de execução ao Datadog.": "A demonstration suite using Selenium and RestAssured against a local application with synthetic data. Page Objects isolate UI interactions; builders and an API client organize data and requests. The pipeline preserves Surefire reports and sends execution metrics to Datadog.",
+  "Quatro cenários: login válido e inválido, criação de usuário e rejeição de e-mail vazio. Execução registrada em 05/10/2026: 4 testes Java aprovados, sem falhas, erros ou ignorados; 6 testes Python do coletor de métricas aprovados. Código em repositório privado.": "Four scenarios: valid and invalid login, user creation and rejection of an empty email. Recorded run: October 5, 2026. All 4 Java tests passed, with no failures, errors or skipped tests; all 6 Python tests for the metrics collector passed. Code in a private repository.",
+  "Conversar sobre a automação Java": "Ask about Java automation"
 });

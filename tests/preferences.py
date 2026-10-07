@@ -32,6 +32,8 @@ def run():
             expect(page.locator('.hero-role')).to_contain_text('QA Lead')
             expect(page.locator('.hero-description')).to_have_text('I test software and investigate why it fails.')
             expect(page.locator('.case-story')).to_contain_text('ten most-used tags')
+            expect(page.locator('#qa-automation-java')).to_contain_text('Four scenarios')
+            expect(page.locator('#qa-automation-java')).to_contain_text('Recorded run: October 5, 2026')
             expect(page.locator('.case-story code').first).to_have_text('/api/tags')
             expect(page.locator('.case-story code').last).to_have_text('?tag=')
             page.locator('summary').click()

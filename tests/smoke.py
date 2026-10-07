@@ -19,12 +19,12 @@ def run():
         expect(page.locator('.hero-role')).to_contain_text('QA Lead')
         assert page.locator('.work-preview img').evaluate('(img) => img.complete && img.naturalWidth > 0')
         expect(page.get_by_role("button", name="Menu de navegação")).to_be_hidden()
-        expect(page.locator(".project-card:visible")).to_have_count(4)
+        expect(page.locator(".project-card:visible")).to_have_count(5)
         page.get_by_role("button", name="Pessoais", exact=True).click()
         expect(page.locator(".project-card:visible")).to_have_count(1)
         expect(page.get_by_role("heading", name="TrackFit PRO")).to_be_visible()
         page.get_by_role("button", name="QA & automação", exact=True).click()
-        expect(page.locator(".project-card:visible")).to_have_count(3)
+        expect(page.locator(".project-card:visible")).to_have_count(4)
         page.get_by_role("button", name="Todos", exact=True).click()
         for anchor in page.locator('a[href^="#"]').all():
             target = anchor.get_attribute("href")
@@ -56,7 +56,7 @@ def run():
         assert not errors, errors
         no_js = browser.new_page(java_script_enabled=False, viewport={"width": 390, "height": 844})
         no_js.goto(URL)
-        expect(no_js.locator(".project-card:visible")).to_have_count(4)
+        expect(no_js.locator(".project-card:visible")).to_have_count(5)
         expect(no_js.get_by_role("navigation").get_by_role("link", name="Projetos", exact=True)).to_be_visible()
         no_js.close()
         browser.close()

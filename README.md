@@ -21,9 +21,9 @@ As fontes Source Serif 4, Source Sans 3 e IBM Plex Mono são carregadas pelo Goo
 
 PT é o idioma inicial. O tema segue o sistema até a escolha manual. Botões PT/EN e tema salvam preferências quando o armazenamento está disponível. Idioma inclui textos, metadados, rótulos acessíveis e assunto do contato do projeto pessoal. Preferências em file:// variam por navegador; prefira HTTP para a avaliação de persistência. Sem armazenamento, os controles seguem funcionais na visita.
 
-Glassmorphism é limitado ao cabeçalho; há fundo opaco em navegadores sem suporte a backdrop-filter. Animações são pontuais e respeitam prefers-reduced-motion. Nome e cargo lideram a apresentação, com cases verificáveis e contatos específicos para vagas e consultoria. A foto pessoal pode ser acrescentada na abertura quando fornecida, preservando o relatório na seção de projetos.
+Glassmorphism é limitado ao cabeçalho; há fundo opaco em navegadores sem suporte a backdrop-filter. Animações são pontuais e respeitam prefers-reduced-motion. Nome e cargo lideram a apresentação, com cases verificáveis e contatos específicos para vagas e consultoria. A foto fornecida pelo autor está na abertura; o relatório permanece na seção de projetos.
 
-Não publicado. Para publicar no futuro, definir repositório e endereço final, configurar metadados de compartilhamento com URL definitiva e selecionar a pasta de publicação sem alterar o README de perfil.
+Publicado no GitHub Pages em https://maikonfcosta.github.io/portfolio/. A página inclui URL canônica, Open Graph e Twitter Card com imagem de compartilhamento em assets/social-preview.png.
 
 Abertura com nome em duas linhas e apresentação direta. Case principal conta a investigação do contrato de tags do Conduit, documentada no README da suíte. Projetos secundários em linhas compactas e TrackFit em área própria. Os resultados ficam junto da trajetória, e os serviços partem das dúvidas do cliente. Direção em docs/personal-direction.md.
 
@@ -32,3 +32,7 @@ Abertura com nome em duas linhas e apresentação direta. Case principal conta a
 Repositório público: https://github.com/maikonfcosta/portfolio. Site: https://maikonfcosta.github.io/portfolio/. Execute ./scripts/qa-ci-local.ps1 antes de commit ou push; requer Python, Playwright com Chromium e Node. A auditoria axe consulta o registro npm.
 
 A foto de perfil é fornecida pelo autor, otimizada em WebP e armazenada em assets/maikon-costa.webp.
+
+## Atualização de conteúdo — 07/10/2026
+
+Cinco projetos: quatro de QA e um pessoal. QA Automation Java apresenta arquitetura, cenários sintéticos e resultados históricos registrados em 05/10/2026; o código é privado, por isso o case usa contato em vez de um link que exige acesso. Competências incluem Java, Selenium, RestAssured, JUnit 5, Maven e GitHub Actions. O diretório local qa-automation-java/ é independente e não faz parte desta atualização do site.

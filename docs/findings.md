@@ -18,3 +18,7 @@ Paleta final grafite + jade: dark bg #111715, surface #1b2520, accent #91d5ae; l
 Idioma preserva os nós originais, sem innerHTML nem acesso remoto para traduções; localStorage protegido por try/catch. Preferência de tema aplicada antes do CSS. IntersectionObserver revela conteúdo sem loop de scroll; elementos focados por teclado são revelados imediatamente. Movimento reduzido desativa animações, inclusive se a preferência mudar durante a visita.
 
 Documentação: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter ; https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API ; https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage . Validação complementar com axe-core 4.10.3, sem instalação de dependência.
+
+## Revisão — 07/10/2026
+
+Publicado corresponde ao último commit 14c491f, após normalizar CRLF/LF. QA Automation Java foi identificado pela implementação e documentação locais: quatro cenários Java e seis testes Python, com execução histórica registrada em 05/10/2026. Repositório privado: case não deve apontar para código/pipeline inacessíveis. Não publicar credenciais, IDs de cartões ou documentação interna; texto do case contém somente arquitetura e dados sintéticos.

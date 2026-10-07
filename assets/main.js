@@ -71,6 +71,12 @@
     document.querySelector('meta[name="description"]').content = description;
     document.querySelector('meta[property="og:title"]').content = 'Maikon Costa — QA Lead & Test Automation Engineer';
     document.querySelector('meta[property="og:description"]').content = description;
+    document.querySelector('meta[property="og:locale"]').content = english ? 'en_US' : 'pt_BR';
+    document.querySelector('meta[name="twitter:description"]').content = description;
+    const imageAlt = english ? 'Maikon Costa, QA Lead and Test Automation Engineer' : 'Maikon Costa, QA Lead e Test Automation Engineer';
+    document.querySelector('meta[property="og:image:alt"]').content = imageAlt;
+    document.querySelector('meta[name="twitter:image:alt"]').content = imageAlt;
+    document.querySelector('#qa-automation-java .project-links a').href = `mailto:maikonfcosta@gmail.com?subject=${encodeURIComponent(english ? 'Tell me about QA Automation Java' : 'Quero conhecer o QA Automation Java')}`;
     const personalContact = document.querySelector('.project-card[data-category="personal"] .project-links a');
     personalContact.href = `mailto:maikonfcosta@gmail.com?subject=${encodeURIComponent(english ? 'Tell me about TrackFit PRO' : 'Quero conhecer o TrackFit PRO')}`;
     const contactSubjects = english ? ['QA opportunity', 'Quality consulting'] : ['Oportunidade em QA', 'Consultoria em qualidade'];
