@@ -8,3 +8,5 @@ node_modules/
 *.log
 test-results/
 playwright-report/
+docs/qa-automation-java-design.md
+qa-automation-java/
