@@ -29,7 +29,7 @@ def run():
             page.get_by_role('button', name='English', exact=True).click()
             expect(page.locator('html')).to_have_attribute('lang', 'en')
             expect(page.get_by_role('heading', level=1)).to_have_text('Maikon Costa')
-            expect(page.locator('.hero-role')).to_contain_text('QA Lead')
+            expect(page.locator('.hero-role')).to_contain_text('Senior QA')
             expect(page.locator('.hero-description')).to_have_text('I test software and investigate why it fails.')
             expect(page.locator('.case-story')).to_contain_text('ten most-used tags')
             expect(page.locator('#qa-automation-java')).to_contain_text('Four scenarios')

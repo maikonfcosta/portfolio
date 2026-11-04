@@ -19,7 +19,7 @@ def run():
         # 1. Leader / Hero
         expect(page.locator(".card-title-row h3")).to_have_text("MAIKON COSTA")
         expect(page.locator(".brand-name")).to_contain_text("maikon costa")
-        expect(page.locator(".brand-tag")).to_contain_text("QA Lead")
+        expect(page.locator(".brand-tag")).to_contain_text("Senior QA")
 
         # 2. Deck & Project Filters
         expect(page.locator(".tcg-card-item:visible")).to_have_count(9)
