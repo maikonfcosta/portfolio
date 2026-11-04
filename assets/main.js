@@ -66,14 +66,14 @@
     root.lang = english ? 'en' : 'pt-BR';
     document.title = english ? 'Maikon Costa · QA, automation & consulting' : 'Maikon Costa · QA, automação & consultoria';
     const description = english
-      ? 'Maikon Costa — QA Lead and Test Automation Engineer. E2E automation, performance, quality strategy, consulting and personal projects.'
-      : 'Maikon Costa — QA Lead e Test Automation Engineer. Automação E2E, performance, estratégia de qualidade, consultoria e projetos pessoais.';
+      ? 'Maikon Costa — Senior QA Engineer and Test Automation Specialist. E2E automation, performance, quality strategy, consulting and personal projects.'
+      : 'Maikon Costa — Senior QA Engineer e Especialista em Automação de Testes. Automação E2E, performance, estratégia de qualidade, consultoria e projetos pessoais.';
     document.querySelector('meta[name="description"]').content = description;
-    document.querySelector('meta[property="og:title"]').content = 'Maikon Costa — QA Lead & Test Automation Engineer';
+    document.querySelector('meta[property="og:title"]').content = 'Maikon Costa — Senior QA Engineer & SDET';
     document.querySelector('meta[property="og:description"]').content = description;
     document.querySelector('meta[property="og:locale"]').content = english ? 'en_US' : 'pt_BR';
     document.querySelector('meta[name="twitter:description"]').content = description;
-    const imageAlt = english ? 'Maikon Costa, QA Lead and Test Automation Engineer' : 'Maikon Costa, QA Lead e Test Automation Engineer';
+    const imageAlt = english ? 'Maikon Costa, Senior QA Engineer and Test Automation Specialist' : 'Maikon Costa, Senior QA Engineer e Especialista em Automação de Testes';
     document.querySelector('meta[property="og:image:alt"]').content = imageAlt;
     document.querySelector('meta[name="twitter:image:alt"]').content = imageAlt;
     document.querySelector('#qa-automation-java .project-links a').href = `mailto:maikonfcosta@gmail.com?subject=${encodeURIComponent(english ? 'Tell me about QA Automation Java' : 'Quero conhecer o QA Automation Java')}`;

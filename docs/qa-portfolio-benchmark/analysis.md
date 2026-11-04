@@ -26,7 +26,7 @@ Usar Alejandro como referência de presença pessoal; Tejasvini como referência
 
 ### Primeira dobra
 - H1: **Maikon Costa**.
-- Cargo legível: **QA Lead · Test Automation Engineer**.
+- Cargo legível: **Senior QA Engineer · Test Automation Specialist**.
 - Resumo: **Mais de 8 anos em automação, de RPA à qualidade de software. Estruturei um programa de QA para seis produtos em uma fintech B2B, integrando testes, indicadores e CI/CD.**
 - Ações: **Ver cases de QA** e **Conversar sobre uma oportunidade**; contato de consultoria explícito na respectiva seção.
 - Retrato real, se fornecido pelo usuário, ou uma composição focada no case principal. Sem foto inventada, avatar genérico ou foto de banco de imagens como retrato.
