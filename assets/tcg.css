@@ -16,7 +16,7 @@
   
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
-  --text-dim: #64748b;
+  --text-dim: #94a3b8;
 
   /* Cores de Mana / Atributos TCG */
   --tcg-green: #10b981;
@@ -363,6 +363,7 @@ button {
   margin-bottom: 8px;
 }
 
+.card-title-row .card-name-title,
 .card-title-row h3 {
   font-family: var(--font-display);
   font-size: 1.25rem;
@@ -649,6 +650,7 @@ button {
   margin-bottom: 20px;
 }
 
+.dice-card-header h3,
 .dice-card-header h4 {
   font-family: var(--font-display);
   font-size: 1.35rem;
@@ -1131,6 +1133,7 @@ button {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.tray-header h3,
 .tray-header h4 {
   font-family: var(--font-display);
   font-size: 0.95rem;
@@ -1204,6 +1207,7 @@ button {
   display: block;
 }
 
+.perk-card h3,
 .perk-card h4 {
   font-family: var(--font-display);
   font-size: 1.2rem;
@@ -1485,5 +1489,35 @@ button {
 
   .sheet-table .prop-val {
     font-size: 0.84rem;
+  }
+}
+
+/* ==========================================================================
+   ACESSIBILIDADE: PREFERS-REDUCED-MOTION (WCAG 2.3.3)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .tcg-card-item:hover,
+  .btn-primary-play:hover,
+  .btn-roll-d20:hover,
+  .btn-summon-play:hover {
+    transform: none !important;
+  }
+
+  .leader-card-3d .card-art-img {
+    transition: none !important;
+  }
+
+  .d20-canvas-container.roll-settled {
+    animation: none !important;
   }
 }
