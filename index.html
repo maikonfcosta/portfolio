@@ -12,6 +12,10 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://maikonfcosta.github.io/portfolio/">
   <meta property="og:image" content="https://maikonfcosta.github.io/portfolio/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Maikon Costa · Senior QA Engineer & RPA Developer">
+  <meta name="twitter:description" content="Engenharia de testes determinística, esteiras de CI/CD resilientes e estratégia de qualidade inspirada em Board Games e TCG.">
+  <meta name="twitter:image" content="https://maikonfcosta.github.io/portfolio/assets/social-preview.png">
   <link rel="canonical" href="https://maikonfcosta.github.io/portfolio/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
@@ -21,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/tcg.css?v=20261103-v3">
-  <script src="assets/three.min.js"></script>
+  <script src="assets/three.min.js" defer></script>
   <script src="assets/tcg.js?v=20261103-v3" defer></script>
 </head>
 <body>
@@ -77,7 +81,7 @@
 
             <div class="card-rules-box">
               <div class="card-title-row">
-                <h3>MAIKON COSTA</h3>
+                <div class="card-name-title">MAIKON COSTA</div>
                 <span class="card-cost">CUSTO: 8+ ANOS XP</span>
               </div>
 
@@ -197,7 +201,7 @@
           <div class="dice-interactive-card">
             <div class="dice-card-header">
               <span class="dice-eyebrow">◆ DADO D20 POLIEDRO 3D</span>
-              <h4>D20 de Qualidade Tática</h4>
+              <h3>D20 de Qualidade Tática</h3>
               <p>Gire livremente em 3D ou clique para rolar e sortear um princípio de engenharia.</p>
             </div>
 
@@ -211,7 +215,7 @@
               </button>
             </div>
 
-            <div class="rule-outcome-box">
+            <div class="rule-outcome-box" id="ruleOutcomeBox" role="status" aria-live="polite">
               <div class="rule-outcome-title" id="ruleOutcomeTitle">D20 · CRITICAL SUCCESS: ZERO FLAKINESS</div>
               <div class="rule-outcome-text" id="ruleOutcomeText">
                 O anel crítico atinge 0% de instabilidade. A esteira de CI/CD só quebra se o produto quebrar.
@@ -236,17 +240,17 @@
 
       <div class="deck-toolbar">
         <div class="deck-filter-tabs" role="group" aria-label="Filtrar Cartas do Deck">
-          <button type="button" class="deck-tab active" data-filter="all">TODAS AS CARTAS</button>
-          <button type="button" class="deck-tab" data-filter="e2e">COMBATE E2E &amp; APIS</button>
-          <button type="button" class="deck-tab" data-filter="ai">FEITIÇOS DE IA &amp; DIAGNÓSTICO</button>
-          <button type="button" class="deck-tab" data-filter="perf">GUARDA DE CARGA &amp; DADOS</button>
-          <button type="button" class="deck-tab" data-filter="product">INICIATIVAS DE PRODUTO</button>
+          <button type="button" class="deck-tab active" data-filter="all" aria-pressed="true">TODAS AS CARTAS</button>
+          <button type="button" class="deck-tab" data-filter="e2e" aria-pressed="false">COMBATE E2E &amp; APIS</button>
+          <button type="button" class="deck-tab" data-filter="ai" aria-pressed="false">FEITIÇOS DE IA &amp; DIAGNÓSTICO</button>
+          <button type="button" class="deck-tab" data-filter="perf" aria-pressed="false">GUARDA DE CARGA &amp; DADOS</button>
+          <button type="button" class="deck-tab" data-filter="product" aria-pressed="false">INICIATIVAS DE PRODUTO</button>
         </div>
 
-        <div class="deck-view-options">
+        <div class="deck-view-options" role="group" aria-label="Modo de Visualização">
           <span class="deck-counter" id="deckCount">09 cartas no grimório</span>
-          <button type="button" class="deck-view-btn active" id="btnViewBinder" title="Modo Fichário de Cartas">BINDER</button>
-          <button type="button" class="deck-view-btn" id="btnViewBoard" title="Modo Mesa Tática">MESA</button>
+          <button type="button" class="deck-view-btn active" id="btnViewBinder" title="Modo Fichário de Cartas" aria-pressed="true">BINDER</button>
+          <button type="button" class="deck-view-btn" id="btnViewBoard" title="Modo Mesa Tática" aria-pressed="false">MESA</button>
         </div>
       </div>
 
@@ -272,8 +276,8 @@
             <span class="cost-tag">GitHub Actions</span>
           </div>
           <div class="card-action-bar">
-            <a href="https://github.com/maikonfcosta/playwright-reference-suite" target="_blank" rel="noreferrer" class="card-link-act">REPOSITÓRIO ↗</a>
-            <a href="https://maikonfcosta.github.io/playwright-reference-suite/" target="_blank" rel="noreferrer" class="card-link-act">RELATÓRIO PÚBLICO ↗</a>
+            <a href="https://github.com/maikonfcosta/playwright-reference-suite" target="_blank" rel="noreferrer" class="card-link-act" aria-label="Repositório do Playwright Reference Suite no GitHub">REPOSITÓRIO ↗</a>
+            <a href="https://maikonfcosta.github.io/playwright-reference-suite/" target="_blank" rel="noreferrer" class="card-link-act" aria-label="Relatório público de testes do Playwright Reference Suite">RELATÓRIO PÚBLICO ↗</a>
           </div>
         </article>
 
@@ -297,7 +301,7 @@
             <span class="cost-tag">Playwright</span>
           </div>
           <div class="card-action-bar">
-            <a href="https://github.com/maikonfcosta/failure-classifier" target="_blank" rel="noreferrer" class="card-link-act">REPOSITÓRIO ↗</a>
+            <a href="https://github.com/maikonfcosta/failure-classifier" target="_blank" rel="noreferrer" class="card-link-act" aria-label="Repositório do Failure Classifier no GitHub">REPOSITÓRIO ↗</a>
           </div>
         </article>
 
@@ -321,8 +325,8 @@
             <span class="cost-tag">DevOps</span>
           </div>
           <div class="card-action-bar">
-            <a href="https://github.com/maikonfcosta/ai-ci-triage" target="_blank" rel="noreferrer" class="card-link-act">REPOSITÓRIO ↗</a>
-            <a href="https://github.com/maikonfcosta/playwright-reference-suite/pull/1#issuecomment-5896070196" target="_blank" rel="noreferrer" class="card-link-act">EXEMPLO NO PR ↗</a>
+            <a href="https://github.com/maikonfcosta/ai-ci-triage" target="_blank" rel="noreferrer" class="card-link-act" aria-label="Repositório do AI CI Triage no GitHub">REPOSITÓRIO ↗</a>
+            <a href="https://github.com/maikonfcosta/playwright-reference-suite/pull/1#issuecomment-5896070196" target="_blank" rel="noreferrer" class="card-link-act" aria-label="Exemplo de comentário gerado pelo AI CI Triage no Pull Request">EXEMPLO NO PR ↗</a>
           </div>
         </article>
 
@@ -345,7 +349,7 @@
             <span class="cost-tag">Métricas</span>
           </div>
           <div class="card-action-bar">
-            <a href="https://github.com/maikonfcosta/qa-playbook" target="_blank" rel="noreferrer" class="card-link-act">REPOSITÓRIO ↗</a>
+            <a href="https://github.com/maikonfcosta/qa-playbook" target="_blank" rel="noreferrer" class="card-link-act" aria-label="Repositório do QA Playbook no GitHub">REPOSITÓRIO ↗</a>
           </div>
         </article>
 
@@ -369,7 +373,7 @@
             <span class="cost-tag">Alertas</span>
           </div>
           <div class="card-action-bar">
-            <a href="https://github.com/maikonfcosta/synthetic-monitoring" target="_blank" rel="noreferrer" class="card-link-act">REPOSITÓRIO ↗</a>
+            <a href="https://github.com/maikonfcosta/synthetic-monitoring" target="_blank" rel="noreferrer" class="card-link-act" aria-label="Repositório do Synthetic Monitoring no GitHub">REPOSITÓRIO ↗</a>
           </div>
         </article>
 
@@ -393,7 +397,7 @@
             <span class="cost-tag">OpenAPI</span>
           </div>
           <div class="card-action-bar">
-            <a href="https://github.com/maikonfcosta/api-contract-lab" target="_blank" rel="noreferrer" class="card-link-act">REPOSITÓRIO ↗</a>
+            <a href="https://github.com/maikonfcosta/api-contract-lab" target="_blank" rel="noreferrer" class="card-link-act" aria-label="Repositório do API Contract Lab no GitHub">REPOSITÓRIO ↗</a>
           </div>
         </article>
 
@@ -417,7 +421,7 @@
             <span class="cost-tag">SLO p95</span>
           </div>
           <div class="card-action-bar">
-            <a href="https://github.com/maikonfcosta/locust-perf-kit" target="_blank" rel="noreferrer" class="card-link-act">REPOSITÓRIO ↗</a>
+            <a href="https://github.com/maikonfcosta/locust-perf-kit" target="_blank" rel="noreferrer" class="card-link-act" aria-label="Repositório do Locust Perf Kit no GitHub">REPOSITÓRIO ↗</a>
           </div>
         </article>
 
@@ -441,7 +445,7 @@
             <span class="cost-tag">Faker / PII</span>
           </div>
           <div class="card-action-bar">
-            <a href="https://github.com/maikonfcosta/data-seeding-pipeline" target="_blank" rel="noreferrer" class="card-link-act">REPOSITÓRIO ↗</a>
+            <a href="https://github.com/maikonfcosta/data-seeding-pipeline" target="_blank" rel="noreferrer" class="card-link-act" aria-label="Repositório do Data Seeding Pipeline no GitHub">REPOSITÓRIO ↗</a>
           </div>
         </article>
 
@@ -465,7 +469,7 @@
             <span class="cost-tag">PWA Offline</span>
           </div>
           <div class="card-action-bar">
-            <a href="mailto:maikonfcosta@gmail.com?subject=Interesse%20no%20Rotine%20e%20TrackFit" class="card-link-act">DISCUTIR PRODUTOS ↗</a>
+            <a href="mailto:maikonfcosta@gmail.com?subject=Interesse%20no%20Rotine%20e%20TrackFit" class="card-link-act" aria-label="Discutir os produtos Rotine e TrackFit PRO por e-mail">DISCUTIR PRODUTOS ↗</a>
           </div>
         </article>
 
@@ -581,7 +585,7 @@
 
         <div class="insert-tray-box">
           <div class="tray-header">
-            <h4>QA &amp; AUTOMAÇÃO</h4>
+            <h3>QA &amp; AUTOMAÇÃO</h3>
             <span class="tray-count-tag">8 PEÇAS</span>
           </div>
           <div class="component-tokens-list">
@@ -598,7 +602,7 @@
 
         <div class="insert-tray-box">
           <div class="tray-header">
-            <h4>DEVOPS &amp; OBSERVABILIDADE</h4>
+            <h3>DEVOPS &amp; OBSERVABILIDADE</h3>
             <span class="tray-count-tag">6 PEÇAS</span>
           </div>
           <div class="component-tokens-list">
@@ -613,7 +617,7 @@
 
         <div class="insert-tray-box">
           <div class="tray-header">
-            <h4>RPA &amp; PROCESSOS</h4>
+            <h3>RPA &amp; PROCESSOS</h3>
             <span class="tray-count-tag">6 PEÇAS</span>
           </div>
           <div class="component-tokens-list">
@@ -628,7 +632,7 @@
 
         <div class="insert-tray-box">
           <div class="tray-header">
-            <h4>LINGUAGENS &amp; CORE</h4>
+            <h3>LINGUAGENS &amp; CORE</h3>
             <span class="tray-count-tag">5 PEÇAS</span>
           </div>
           <div class="component-tokens-list">
@@ -660,19 +664,19 @@
         <div class="contact-perks-list">
           <div class="perk-card">
             <span class="perk-label">Status Operacional</span>
-            <h4>Disponível para Posições &amp; Consultoria</h4>
+            <h3>Disponível para Posições &amp; Consultoria</h3>
             <p>Aberto a papéis como Senior QA Engineer, SDET e diagnósticos arquiteturais de suítes de teste.</p>
           </div>
 
           <div class="perk-card">
             <span class="perk-label">Tempo de Resposta</span>
-            <h4>Retorno em até ~24 horas</h4>
+            <h3>Retorno em até ~24 horas</h3>
             <p>Atendimento pessoal e técnico direto em horário útil.</p>
           </div>
 
           <div class="perk-card">
             <span class="perk-label">Canais Diretos</span>
-            <h4>Redes &amp; Contato Profissional</h4>
+            <h3>Redes &amp; Contato Profissional</h3>
             <p>
               E-mail: <strong>maikonfcosta@gmail.com</strong><br>
               LinkedIn: <a href="https://www.linkedin.com/in/maikonfcosta" target="_blank" rel="noreferrer" style="color: var(--tcg-green);">linkedin.com/in/maikonfcosta ↗</a><br>
