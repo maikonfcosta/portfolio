@@ -1,5 +1,6 @@
 """Fluxos públicos do portfólio Board Game & TCG; executar com python tests/smoke.py."""
 import json
+import re
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
 
@@ -17,7 +18,7 @@ def run():
         page.goto(URL)
 
         # 1. Leader / Hero
-        expect(page.locator(".card-title-row h3")).to_have_text("MAIKON COSTA")
+        expect(page.locator(".card-title-row .card-name-title")).to_have_text("MAIKON COSTA")
         expect(page.locator(".brand-name")).to_contain_text("maikon costa")
         expect(page.locator(".brand-tag")).to_contain_text("Senior QA")
 
@@ -25,15 +26,21 @@ def run():
         expect(page.locator(".tcg-card-item:visible")).to_have_count(9)
 
         # Test e2e filter
-        page.locator(".deck-tab[data-filter='e2e']").click()
+        e2e_tab = page.locator(".deck-tab[data-filter='e2e']")
+        e2e_tab.click()
+        expect(e2e_tab).to_have_attribute("aria-pressed", "true")
         assert page.locator(".tcg-card-item:visible").count() >= 1
 
         # Test ai filter
-        page.locator(".deck-tab[data-filter='ai']").click()
+        ai_tab = page.locator(".deck-tab[data-filter='ai']")
+        ai_tab.click()
+        expect(ai_tab).to_have_attribute("aria-pressed", "true")
         assert page.locator(".tcg-card-item:visible").count() >= 1
 
         # Reset filter to "all"
-        page.locator(".deck-tab[data-filter='all']").click()
+        all_tab = page.locator(".deck-tab[data-filter='all']")
+        all_tab.click()
+        expect(all_tab).to_have_attribute("aria-pressed", "true")
         expect(page.locator(".tcg-card-item:visible")).to_have_count(9)
 
         # 3. Anchor targets
@@ -45,12 +52,13 @@ def run():
         # 4. Contact links
         expect(page.locator("a[href^='mailto:maikonfcosta@gmail.com']").first).to_be_visible()
 
-        # 5. D20 3D Dice Component
+        # 5. D20 3D Dice Component & Live Region
         expect(page.locator("#d20ThreeCanvas")).to_be_visible()
+        expect(page.locator("#ruleOutcomeBox")).to_have_attribute("aria-live", "polite")
         roll_btn = page.locator("#btnRollD20")
         expect(roll_btn).to_be_visible()
         roll_btn.click()
-        page.wait_for_timeout(2500)
+        expect(page.locator("#d20CanvasContainer")).to_have_class(re.compile(r"roll-settled"), timeout=5000)
         outcome_title = page.locator("#ruleOutcomeTitle").inner_text()
         assert "D" in outcome_title, f"Invalid dice title: {outcome_title}"
 

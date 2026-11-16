@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
    1. FÍSICA 3D TILT & EFEITO FOIL HOLOGRÁFICO
    ========================================================================== */
 function initCard3DTilt() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
   const tiltCards = document.querySelectorAll('.leader-card-3d, .tcg-card-item');
 
   tiltCards.forEach(card => {
@@ -90,6 +94,26 @@ function initD20Roller() {
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
   renderer.setSize(width, height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // ResizeObserver para manter aspect ratio e nitidez sempre perfeitos
+  if (window.ResizeObserver) {
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const cr = entry.contentRect;
+        const w = Math.round(cr.width);
+        const h = Math.round(cr.height);
+        if (w > 0 && h > 0) {
+          camera.aspect = w / h;
+          camera.updateProjectionMatrix();
+          renderer.setSize(w, h);
+          if (typeof isAnimationRunning !== 'undefined' && !isAnimationRunning) {
+            renderer.render(scene, camera);
+          }
+        }
+      }
+    });
+    resizeObserver.observe(container);
+  }
 
   // 2. Iluminação do Dado (Cores do Portfólio: Esmeralda QA, Dourado Ouro e Ônix)
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.65);
@@ -261,10 +285,7 @@ function initD20Roller() {
 
   function rollD20() {
     if (isRolling) return;
-    isRolling = true;
-    rollFrame = 0;
     playDiceClatter();
-
     container.classList.remove('roll-settled');
 
     // Sorteia face física do dado de 1 a 20 (índice 0 a 19)
@@ -276,6 +297,23 @@ function initD20Roller() {
     // Face com alinhamento ortonormal exato para a câmera
     targetQuat.copy(faceTargetQuats[chosenIdx]);
 
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      isRolling = false;
+      d20Group.quaternion.copy(targetQuat);
+      d20Group.position.set(0, 0, 0);
+      container.classList.add('roll-settled');
+      if (chosenRule) {
+        outcomeTitle.textContent = chosenRule.title;
+        outcomeText.textContent = chosenRule.text;
+      }
+      renderer.render(scene, camera);
+      return;
+    }
+
+    isRolling = true;
+    rollFrame = 0;
+
     // Eixo de rotação tridimensional aleatório e velocidade inicial
     spinAxis.set(
       (Math.random() - 0.5) * 2,
@@ -283,38 +321,64 @@ function initD20Roller() {
       (Math.random() - 0.5) * 1.5
     ).normalize();
     initialAngularSpeed = 0.38 + Math.random() * 0.12;
+
+    startAnimationLoop();
   }
 
-  // 7. Eventos de Clique e Drag Interativo com o Mouse
-  let isDragging = false;
-  let prevMousePos = { x: 0, y: 0 };
-
-  container.addEventListener('mousedown', (e) => {
-    if (isRolling) return;
-    isDragging = true;
-    prevMousePos = { x: e.clientX, y: e.clientY };
-  });
-
-  window.addEventListener('mousemove', (e) => {
-    if (!isDragging || isRolling) return;
-    const deltaX = e.clientX - prevMousePos.x;
-    const deltaY = e.clientY - prevMousePos.y;
-
+  // 7. Eventos de Drag Interativo (Mouse & Touch)
+  function applyDragRotation(deltaX, deltaY) {
     const rotSpeed = 0.008;
     const rotQuatX = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), deltaX * rotSpeed);
     const rotQuatY = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), deltaY * rotSpeed);
 
     d20Group.quaternion.premultiply(rotQuatX);
     d20Group.quaternion.premultiply(rotQuatY);
+  }
 
-    prevMousePos = { x: e.clientX, y: e.clientY };
+  let isDragging = false;
+  let prevPos = { x: 0, y: 0 };
+
+  // Mouse
+  container.addEventListener('mousedown', (e) => {
+    if (isRolling) return;
+    isDragging = true;
+    prevPos = { x: e.clientX, y: e.clientY };
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging || isRolling) return;
+    const deltaX = e.clientX - prevPos.x;
+    const deltaY = e.clientY - prevPos.y;
+    applyDragRotation(deltaX, deltaY);
+    prevPos = { x: e.clientX, y: e.clientY };
   });
 
   window.addEventListener('mouseup', () => {
     isDragging = false;
   });
 
-  // Clique no container ou botão dispara rolagem
+  // Touch
+  container.addEventListener('touchstart', (e) => {
+    if (isRolling || !e.touches || e.touches.length === 0) return;
+    isDragging = true;
+    const touch = e.touches[0];
+    prevPos = { x: touch.clientX, y: touch.clientY };
+  }, { passive: true });
+
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging || isRolling || !e.touches || e.touches.length === 0) return;
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - prevPos.x;
+    const deltaY = touch.clientY - prevPos.y;
+    applyDragRotation(deltaX, deltaY);
+    prevPos = { x: touch.clientX, y: touch.clientY };
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+
+  // Clique no canvas ou botão dispara rolagem
   canvas.addEventListener('click', () => {
     if (!isDragging) rollD20();
   });
@@ -326,9 +390,57 @@ function initD20Roller() {
     });
   }
 
-  // 8. Loop de Renderização e Física Amortecida Contínua
+  // 8. Loop de Renderização e Física Amortecida (com Pausa Eficiente Offscreen)
+  let isCanvasVisible = true;
+  let isAnimationRunning = false;
+  let animId = null;
+
+  function shouldAnimate() {
+    return document.visibilityState !== 'hidden' && isCanvasVisible;
+  }
+
+  function startAnimationLoop() {
+    if (!isAnimationRunning) {
+      isAnimationRunning = true;
+      animate();
+    }
+  }
+
+  function checkAndPauseAnimation() {
+    if (!shouldAnimate() && !isRolling && !isDragging) {
+      isAnimationRunning = false;
+      if (animId) {
+        cancelAnimationFrame(animId);
+        animId = null;
+      }
+    }
+  }
+
+  if (window.IntersectionObserver) {
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        isCanvasVisible = entry.isIntersecting;
+        if (isCanvasVisible) {
+          startAnimationLoop();
+        } else {
+          checkAndPauseAnimation();
+        }
+      }
+    }, { threshold: 0.05 });
+    observer.observe(container);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && isCanvasVisible) {
+      startAnimationLoop();
+    } else {
+      checkAndPauseAnimation();
+    }
+  });
+
   function animate() {
-    requestAnimationFrame(animate);
+    if (!isAnimationRunning) return;
+    animId = requestAnimationFrame(animate);
 
     if (isRolling) {
       rollFrame++;
@@ -346,7 +458,6 @@ function initD20Roller() {
       // Atração suave crescente para a face sorteada à medida que perde energia
       if (p > 0.35) {
         const settleProgress = (p - 0.35) / 0.65;
-        // Curva suave de atração magnética para a face do dado
         const attractionWeight = Math.pow(settleProgress, 2.5) * 0.45;
         d20Group.quaternion.slerp(targetQuat, attractionWeight);
       }
@@ -370,14 +481,17 @@ function initD20Roller() {
         }
       }
     } else if (!isDragging) {
-      // Idle fluido e sutil
-      d20Group.position.y = Math.sin(Date.now() * 0.002) * 0.03;
+      const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion) {
+        d20Group.position.y = Math.sin(Date.now() * 0.002) * 0.03;
+      }
     }
 
     renderer.render(scene, camera);
+    checkAndPauseAnimation();
   }
 
-  animate();
+  startAnimationLoop();
 }
 
 /* ==========================================================================
@@ -390,8 +504,12 @@ function initDeckFilters() {
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-pressed', 'false');
+      });
       tab.classList.add('active');
+      tab.setAttribute('aria-pressed', 'true');
 
       const filter = tab.getAttribute('data-filter');
       let visible = 0;
@@ -425,13 +543,17 @@ function initDeckViewToggle() {
 
   btnBinder.addEventListener('click', () => {
     btnBinder.classList.add('active');
+    btnBinder.setAttribute('aria-pressed', 'true');
     btnBoard.classList.remove('active');
+    btnBoard.setAttribute('aria-pressed', 'false');
     grid.classList.remove('board-mode');
   });
 
   btnBoard.addEventListener('click', () => {
     btnBoard.classList.add('active');
+    btnBoard.setAttribute('aria-pressed', 'true');
     btnBinder.classList.remove('active');
+    btnBinder.setAttribute('aria-pressed', 'false');
     grid.classList.add('board-mode');
   });
 }

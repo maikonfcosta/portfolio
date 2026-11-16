@@ -1,38 +1,56 @@
 # Portfólio — Maikon Costa
 
-Página estática com identidade geek discreta em grafite + jade, PT/EN e temas claro/escuro. Abra `index.html` no navegador ou, nesta pasta, execute `python -m http.server 4173 --bind 127.0.0.1` e acesse http://127.0.0.1:4173.
+Portfólio profissional de **Maikon Costa** (Senior QA Engineer & RPA Developer), apresentando engenharia de qualidade, automação determinística de testes, observabilidade e cultura estratégica inspirada em *Modern Board Games & TCG*.
 
-## Organização
+Hospedado no GitHub Pages: **[https://maikonfcosta.github.io/portfolio/](https://maikonfcosta.github.io/portfolio/)**
 
-- `index.html`: conteúdo, projetos e contatos.
-- `assets/professional.css`: tokens dos dois temas, vidro, tipografia, layouts e transições.
-- `assets/preferences.js`: preferência de tema antes da pintura inicial, com fallback ao sistema.
-- `assets/locales.js`: tradução PT/EN, preservando elementos e links do HTML.
-- `assets/main.js`: idioma, tema, menu mobile, filtros e entrada das seções ao rolar.
-- `assets/styles.css` e `previews/`: estudos visuais anteriores preservados como referência.
-- `docs/`: plano, pesquisa, progresso e evidências.
-- `tests/`: fluxos em navegador, preferências e auditoria automatizada de acessibilidade.
+---
 
-Execute `python tests/smoke.py` e `python tests/preferences.py` para validar. O segundo teste inicia uma origem HTTP local temporária e verifica persistência. Execute `python tests/accessibility.py` para a auditoria complementar; ele obtém axe-core 4.10.3 do registro npm oficial e o executa sem instalar pacotes. Playwright e Chromium devem estar disponíveis no ambiente de desenvolvimento; não são dependências do site. Axe não substitui revisão manual nem representa certificação WCAG.
+## 🎲 Arquitetura e Estrutura do Site
 
-Conteúdo baseado no README do perfil e nas descrições locais dos projetos. Resultados profissionais são autorrelatados e contextualizados; não representam auditoria externa. Capturas reais do relatório público e da jornada E2E usam dados de demonstração. Origem registrada em assets/evidence/README.md; as imagens são registros estáticos.
+- `index.html`: Marcação semântica com metadados completos (Open Graph, Twitter Card), acessibilidade WCAG 2.1 AA, seções de estratégia, grimório de projetos e convocação para a mesa.
+- `assets/tcg.css`: Tokens de design do playmat escuro, cartas colecionáveis holográficas (Alt-Art/Foil), efeitos de física e suporte nativo a `prefers-reduced-motion`.
+- `assets/tcg.js`: Motor de interatividade com física de inclinação 3D (tilt), rotação do dado D20 poliedro em Three.js (com suporte a toque, redimensionamento responsivo via `ResizeObserver` e pausa inteligente fora do viewport via `IntersectionObserver`), filtros dinâmicos de deck e alternância de visualização (Fichário / Mesa).
+- `assets/three.min.js`: Biblioteca Three.js para renderização WebGL do dado D20 carregada com `defer`.
+- `tests/`: Suíte automatizada de testes com Playwright em Python:
+  - `tests/smoke.py`: Validação de carregamento, cards de projetos, filtros do deck, links de contato, rolagem reativa do D20 e responsividade visual (360px a 1440px).
+  - `tests/accessibility.py`: Auditoria contínua de acessibilidade com o motor oficial axe-core (WCAG 2.0 A/AA, WCAG 2.1 AA e Best Practices) em viewports mobile e desktop.
+- `scripts/qa-ci-local.ps1`: Esteira local de validação contínua (syntax check JS com Node, execução da suíte Playwright/axe-core e verificação de diff git).
 
-As fontes Source Serif 4, Source Sans 3 e IBM Plex Mono são carregadas pelo Google Fonts, com fontes de fallback. O conteúdo, navegação e todos os projetos continuam disponíveis sem JavaScript. O filtro e menu recolhível são aprimoramentos progressivos.
+---
 
-PT é o idioma inicial. O tema segue o sistema até a escolha manual. Botões PT/EN e tema salvam preferências quando o armazenamento está disponível. Idioma inclui textos, metadados, rótulos acessíveis e assunto do contato do projeto pessoal. Preferências em file:// variam por navegador; prefira HTTP para a avaliação de persistência. Sem armazenamento, os controles seguem funcionais na visita.
+## 🃏 Grimório de Projetos Open Source (9 Cartas)
 
-Glassmorphism é limitado ao cabeçalho; há fundo opaco em navegadores sem suporte a backdrop-filter. Animações são pontuais e respeitam prefers-reduced-motion. Nome e cargo lideram a apresentação, com cases verificáveis e contatos específicos para vagas e consultoria. A foto fornecida pelo autor está na abertura; o relatório permanece na seção de projetos.
+1. **Playwright Reference Suite:** Suíte de referência Conduit com isolamento absoluto de dados, 17 testes críticos em ~10s no push e 59 testes noturnos cross-browser.
+2. **Failure Classifier:** Classificador determinístico de falhas em CI/CD (bug de produto vs ambiente vs drift de teste).
+3. **AI CI Triage:** GitHub Action com LLM para triagem automatizada e diagnóstico idempotente de falhas em PRs.
+4. **QA Playbook:** Compilação pública de estratégia de testes, taxonomia de defeitos e gates de patch coverage >= 80%.
+5. **Synthetic Monitoring:** Probes sintéticos com Playwright e algoritmo double-fault contra falsos alarmes em produção.
+6. **API Contract Lab:** Drift scanner OpenAPI/Swagger, auditoria de matriz RBAC e prevenção a vulnerabilidades BOLA/IDOR.
+7. **Locust Perf Kit:** Framework de testes de carga em Python/uv com SLO rígido de latência p95.
+8. **Data Seeding Pipeline:** CLI ultra rápido para geração de massa relacional sanitizada e conformidade LGPD (anonimização de PII).
+9. **Rotine & TrackFit PRO:** Produtos proprietários (SaaS de automação RPA e PWA offline-first de treinos com Next.js e Supabase).
 
-Publicado no GitHub Pages em https://maikonfcosta.github.io/portfolio/. A página inclui URL canônica, Open Graph e Twitter Card com imagem de compartilhamento em assets/social-preview.png.
+---
 
-Abertura com nome em duas linhas e apresentação direta. Case principal conta a investigação do contrato de tags do Conduit, documentada no README da suíte. Projetos secundários em linhas compactas e TrackFit em área própria. Os resultados ficam junto da trajetória, e os serviços partem das dúvidas do cliente. Direção em docs/personal-direction.md.
+## 🧪 Validação Local & Testes
 
-## Repositório e validação local
+Para executar o site localmente:
+```bash
+python -m http.server 4173 --bind 127.0.0.1
+# Acesse http://127.0.0.1:4173
+```
 
-Repositório público: https://github.com/maikonfcosta/portfolio. Site: https://maikonfcosta.github.io/portfolio/. Execute ./scripts/qa-ci-local.ps1 antes de commit ou push; requer Python, Playwright com Chromium e Node. A auditoria axe consulta o registro npm.
+Para rodar a suíte completa de qualidade e acessibilidade antes de commits:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\qa-ci-local.ps1
+```
 
-A foto de perfil é fornecida pelo autor, otimizada em WebP e armazenada em assets/maikon-costa.webp.
+Ou execute os testes isoladamente:
+```bash
+# Teste de fumaça e jornadas visuais
+python tests/smoke.py
 
-## Atualização de conteúdo — 07/10/2026
-
-Cinco projetos: quatro de QA e um pessoal. QA Automation Java apresenta arquitetura, cenários sintéticos e resultados históricos registrados em 05/10/2026; o código é privado, por isso o case usa contato em vez de um link que exige acesso. Competências incluem Java, Selenium, RestAssured, JUnit 5, Maven e GitHub Actions. O diretório local qa-automation-java/ é independente e não faz parte desta atualização do site.
+# Auditoria automatizada de acessibilidade WCAG 2.1 AA (axe-core)
+python tests/accessibility.py
+```
